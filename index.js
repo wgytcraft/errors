@@ -58,7 +58,7 @@ module.exports = function(host,res,req,errornumber,errordesc,version,ejs){
                     <h1 class="font-bold text-4xl md:text-5xl max-w-xl leading-tight">Help</h1> 
                     <a href="https://wgytcraft.github.io/docs/errors">
 				Error Codes
-			</a>|<a href="https://github.com/wgytwebsites/Wgytcraft.cf/discussions/">
+			</a>|<a href="https://github.com/wgytwebsites/help/discussions/">
 				Get Community Help
 			</a>
 			<div><a href="https://docs.github.com/en/github/site-policy">Github is governed by seperate legal policies</a></div>
