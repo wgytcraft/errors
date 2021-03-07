@@ -56,10 +56,10 @@ module.exports = function(host,res,req,errornumber,errordesc,version,ejs){
             <div class=" grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <div class="col-span-6">
                     <h1 class="font-bold text-4xl md:text-5xl max-w-xl leading-tight">Help</h1> 
-                    <a href="https://documentation.wgyt.tk/wgytcraft.cf/errors.html">
+                    <a href="https://wgytcraft.github.io/docs/errors">
 				Error Codes
 			</a>|<a href="https://github.com/wgytwebsites/Wgytcraft.cf/discussions/">
-				Get Help
+				Get Community Help
 			</a>
 			<div><a href="https://docs.github.com/en/github/site-policy">Github is governed by seperate legal policies</a></div>
                 </div>
@@ -77,9 +77,7 @@ module.exports = function(host,res,req,errornumber,errordesc,version,ejs){
             <div class=" grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <div class="col-span-6">
                     <h1 class="font-bold text-4xl md:text-5xl max-w-xl leading-tight">Logs</h1> 
-                    <a href="//Wgytcraft.cf/admin/<%-host%>">
-				Website logs
-			</a>|<a href="//Wgytcraft.cf/__logs">
+                    <a href="/__logs">
 				Wgytcraft logs
 			</a>
 			<div><a>Wgytcraft isn't responsible for errors caused by the code of the website.</a></div>
