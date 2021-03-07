@@ -1,10 +1,10 @@
 module.exports = function(host,res,req,errornumber,errordesc,version,ejs){
-	res.status(errornumber);
+	res.writeHead(200, { 'Content-Type': 'text/html' });
 	date = Date.now() * 1000
 	date2 = new Date(date)
 	date3 = date2.toLocaleString("en-US", {timeZoneName: "short",timeZone: "America/New_York"})
 	console.log(`${errornumber} ${errordesc} error @ https://${host}${req.url}`)
-	res.send(ejs.render(`<!DOCTYPE html>
+	res.write(ejs.render(`<!DOCTYPE html>
 <html lang="en" class="text-white bg-blue-900 antialiased">
 
 <head>
@@ -56,10 +56,10 @@ module.exports = function(host,res,req,errornumber,errordesc,version,ejs){
             <div class=" grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <div class="col-span-6">
                     <h1 class="font-bold text-4xl md:text-5xl max-w-xl leading-tight">Help</h1> 
-                    <a href="https://documentation.wgyt.tk/wgytcraft.cf/errors.html">
+                    <a href="https://wgytcraft.github.io/docs/errors">
 				Error Codes
-			</a>|<a href="https://github.com/wgytwebsites/Wgytcraft.cf/discussions/">
-				Get Help
+			</a>|<a href="https://github.com/wgytwebsites/help/discussions/">
+				Get Community Help
 			</a>
 			<div><a href="https://docs.github.com/en/github/site-policy">Github is governed by seperate legal policies</a></div>
                 </div>
@@ -77,9 +77,7 @@ module.exports = function(host,res,req,errornumber,errordesc,version,ejs){
             <div class=" grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <div class="col-span-6">
                     <h1 class="font-bold text-4xl md:text-5xl max-w-xl leading-tight">Logs</h1> 
-                    <a href="//Wgytcraft.cf/admin/<%-host%>">
-				Website logs
-			</a>|<a href="//Wgytcraft.cf/__logs">
+                    <a href="/__logs">
 				Wgytcraft logs
 			</a>
 			<div><a>Wgytcraft isn't responsible for errors caused by the code of the website.</a></div>
@@ -94,4 +92,5 @@ module.exports = function(host,res,req,errornumber,errordesc,version,ejs){
     </footer>
 </body>
 `, {errornumber: errornumber,errordesc:errordesc,url:`https://${host}${req.url}`,host:host||wgytdomains,timestamp:date3,version:version}));
+	res.end();
 }
