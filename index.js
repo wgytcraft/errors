@@ -1,10 +1,14 @@
-module.exports = function(host,res,req,errornumber,errordesc,version,ejs){
-	res.writeHead(200, { 'Content-Type': 'text/html' });
-	date = Date.now() * 1000
-	date2 = new Date(date)
-	date3 = date2.toLocaleString("en-US", {timeZoneName: "short",timeZone: "America/New_York"})
-	console.log(`${errornumber} ${errordesc} error @ https://${host}${req.url}`)
-	res.write(ejs.render(`<!DOCTYPE html>
+module.exports = function (host, res, req, errornumber, errordesc, version, ejs, config) {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  date = Date.now() * 1000
+  date2 = new Date(date)
+  var data
+  var data.num = errornumber || config.errornumber
+  var data.desc = errordesc || config.errordesc
+  var data.ver = version || config.version
+  var data.date = date2.toLocaleString("en-US", { timeZoneName: "short", timeZone: "America/New_York" })
+  console.log(`${errornumber} ${errordesc} error @ https://${host}${req.url}`)
+  res.write(ejs.render(`<!DOCTYPE html>
 <html lang="en" class="text-white bg-blue-900 antialiased">
 
 <head>
@@ -91,6 +95,6 @@ module.exports = function(host,res,req,errornumber,errordesc,version,ejs){
             </div>
     </footer>
 </body>
-`, {errornumber: errornumber,errordesc:errordesc,url:`https://${host}${req.url}`,host:host||wgytdomains,timestamp:date3,version:version}));
-	res.end();
+`, { errornumber: errornumber, data.num: data.desc, url: `https://${host}${req.url}`, host: host || "wgytcraft selfhosted", timestamp: data.date, version: data.ver }));
+  res.end();
 }
