@@ -47,7 +47,6 @@ module.exports = function (host, res, req, errornumber, datadesc, version, ejs, 
           </a>
           <div><a href="https://docs.github.com/en/github/site-policy">Github is governed by seperate legal
               policies</a></div>
-        </div>
         <h1 class="font-bold text-4xl md:text-5xl max-w-xl leading-tight">Information</h1>
         <div>© Copyright 2021 William Horning. All Rights Reserved.</div>
         <div>Page requested at
