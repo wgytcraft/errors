@@ -62,6 +62,6 @@ module.exports = function (host, res, req, errornumber, errordesc, version, ejs,
       </div>
     </div>
   </body>
-</html>`, { errornumber: errornumber, datanum: datadesc, url: `https://${host}${req.url}`, host: host || "wgytcraft selfhosted", timestamp: datadate, version: dataver }));
+</html>`, { errornumber: errornumber, datanum: datanum,datadesc:datadesc, url: `https://${host}${req.url}`, host: host || "wgytcraft selfhosted", timestamp: datadate, version: dataver }));
   res.end();
 }
