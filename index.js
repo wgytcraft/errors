@@ -11,6 +11,20 @@ module.exports = function (host, res, req, errornumber, datadesc, version, ejs, 
 <html>
   <head>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+    /* 
+     * Inter font
+     */
+    @import url('https://rsms.me/inter/inter.css');
+    html { 
+      font-family: 'Inter', sans-serif; 
+    }
+    @supports (font-variation-settings: normal) {
+      html { 
+        font-family: 'Inter var', sans-serif; 
+      }
+    }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
