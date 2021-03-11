@@ -39,18 +39,21 @@ module.exports = function (host, res, req, errornumber, datadesc, version, ejs, 
           </div>
         </div>
         <div class="w-full md:w-1/2 text-center">
-          <h1 class="font-bold text-4xl md:text-5xl max-w-xl leading-tight">Help</h1>
+        <div class="py-2">
+          <h1 class="font-bold text-3xl md:text-4xl max-w-xl leading-tight">Help</h1>
           <a href="https://wgytcraft.github.io/help/errors">
             Error Codes
           </a>|<a href="https://github.com/wgytwebsites/help/discussions/">
             Get Community Help
           </a>
           <div><a href="https://docs.github.com/en/github/site-policy">Github is governed by seperate legal
-              policies</a></div>
-        <h1 class="font-bold text-4xl md:text-5xl max-w-xl leading-tight">Information</h1>
+              policies</a></div></div>
+              <div class="py-2">
+        <h1 class="font-bold text-3xl md:text-4xl max-w-xl leading-tight">Information</h1>
         <div>© Copyright 2021 William Horning. All Rights Reserved.</div>
         <div>Page requested at
           <%-timestamp%>
+        </div>
         </div>
       </div>
       <div
