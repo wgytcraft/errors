@@ -1,12 +1,12 @@
-module.exports = function (host, res, req, errornumber, errordesc, version, ejs, config) {
+module.exports = function (host, res, req, errornumber, datadesc, version, ejs, config) {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   date = Date.now() * 1000
   date2 = new Date(date)
   var datanum = errornumber || config.errornumber
-  var datadesc = errordesc || config.errordesc
+  var datadesc = datadesc || config.datadesc
   var dataver = version || config.version
   var datadate = date2.toLocaleString("en-US", { timeZoneName: "short", timeZone: "America/New_York" })
-  console.log(`${errornumber} ${errordesc} error @ https://${host}${req.url}`)
+  console.log(`${errornumber} ${datadesc} error @ https://${host}${req.url}`)
   res.write(ejs.render(`<!doctype html>
 <html>
   <head>
@@ -15,7 +15,7 @@ module.exports = function (host, res, req, errornumber, errordesc, version, ejs,
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       <%-errornumber%>
-      <%-errordesc%>
+      <%-datadesc%>
     </title>
   </head>
   <body>
@@ -32,7 +32,7 @@ module.exports = function (host, res, req, errornumber, errordesc, version, ejs,
           <div class="mb-10 md:mb-20 text-gray-600 font-light">
             <h1 class="font-black uppercase text-3xl lg:text-5xl text-yellow-500 mb-10">You seem to be lost!</h1>
             <p><%-errornumber%> at <%-url%></p>
-            <p><%-errordesc%></p>
+            <p><%-datadesc%></p>
           </div>
           <div class="mb-20 md:mb-0">
             <button class="text-lg font-light outline-none focus:outline-none transform transition-all hover:scale-110 text-yellow-500 hover:text-yellow-600"><i class="mdi mdi-arrow-left mr-2"></i>Go Back</button>
