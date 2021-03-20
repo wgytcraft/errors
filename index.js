@@ -60,11 +60,12 @@ module.exports = function (host, res, req, errornumber, datadesc, version, ejs, 
           </a>|<a href="https://github.com/wgytwebsites/help/discussions/">
             Get Community Help
           </a>
-          <div><a href="https://docs.github.com/en/github/site-policy">Github is governed by seperate legal
+          <div><a href="https://docs.github.com/en/github/site-policy">GitHub is governed by seperate legal
               policies</a></div></div>
               <div class="py-2">
         <h1 class="font-bold text-3xl md:text-4xl max-w-xl leading-tight">Information</h1>
-        <div>© Copyright 2021 William Horning. All Rights Reserved.</div>
+        <div>© Copyright 2021 William Horning and Contributors. All Rights Reserved.</div>
+        <div><a href="https://github.com/1hostjs/hosting>GitHub</a></div>
         <div>Page requested at
           <%-timestamp%>
         </div>
