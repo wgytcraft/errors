@@ -1,0 +1,21 @@
+{
+  "name": "@1hostjs/errors",
+  "version": "2.0.0",
+  "description": "beautiful tailwind error pages, powered by ejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo no tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/1hostjs/errors.git"
+  },
+  "keywords": [
+    "1hostjs"
+  ],
+  "dependencies": {
+    "ejs": "^3.1.6"
+  },
+  "author": "wgyt",
+  "license": "MIT"
+}
