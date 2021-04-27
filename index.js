@@ -14,7 +14,7 @@ module.exports = async (req, res, code, err, config) => {
   } else {
     paath = path.join(config.dirname, "error.ejs");
   }
-  var ejsss = ejs.renderFile(
+  ejs.renderFile(
     paath,
     {
       errornumber: code,
