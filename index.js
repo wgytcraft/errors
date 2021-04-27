@@ -1,4 +1,5 @@
 const ejs = require("ejs");
+const path = require("path");
 module.exports = async (req, res, code, err, config) => {
   res.statusCode = code;
   var datanum = code;
@@ -7,12 +8,17 @@ module.exports = async (req, res, code, err, config) => {
     timeZoneName: "short",
     timeZone: "America/New_York",
   });
-
+  var pathh;
+  if (config.custom) {
+    pathh = config.templatepath;
+  } else {
+    pathh = "./error.ejs";
+  }
   res.write(
-    await ejs.renderFile("/workspace/hosting/tests/posix/error.ejs", {
+    await ejs.renderFile(pathh, {
       errornumber: code,
       datanum: datanum,
-      host: "1host.js selfhosted",
+      host: req.headers.host,
       timestamp: datadate,
       version: dataver,
       err: err,
