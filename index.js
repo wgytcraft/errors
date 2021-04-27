@@ -8,20 +8,25 @@ module.exports = async (req, res, code, err, config) => {
     timeZoneName: "short",
     timeZone: "America/New_York",
   });
-  var pathh;
+  var paath;
   if (config.custom) {
-    pathh = config.templatepath;
+    paath = path.join(config.dirname, config.templatepath)
   } else {
-    pathh = "./error.ejs";
+    paath = path.join(config.dirname, "error.ejs");
   }
-  res.write(
-    await ejs.renderFile(pathh, {
+  var ejsss = ejs.renderFile(
+    paath,
+    {
       errornumber: code,
       datanum: datanum,
       host: req.headers.host,
       timestamp: datadate,
       version: dataver,
       err: err,
-    })
+    },
+    {},
+    (err, str) => {
+      res.write(str);
+    }
   );
 };
