@@ -8,13 +8,18 @@ module.exports = async (req, res, code, err, config) => {
     timeZoneName: "short",
     timeZone: "America/New_York",
   });
-  var paath = path.join(config.dirname, "error.ejs");
-  var ejsss = ejs.renderFile(
+  var paath;
+  if (config.custom) {
+    paath = path.join(config.dirname, config.templatepath)
+  } else {
+    paath = path.join(config.dirname, "error.ejs");
+  }
+  ejs.renderFile(
     paath,
     {
       errornumber: code,
       datanum: datanum,
-      host: "1host.js selfhosted",
+      host: req.headers.host,
       timestamp: datadate,
       version: dataver,
       err: err,
