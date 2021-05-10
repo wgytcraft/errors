@@ -12,7 +12,7 @@ module.exports = async (req, res, code, err, config) => {
   if (config.custom) {
     paath = path.join(config.dirname, config.templatepath)
   } else {
-    paath = path.join(config.dirname, "error.ejs");
+    paath = path.join(config.dirname, "node_modules", "@1hostjs", "errors", "error.ejs");
   }
   ejs.renderFile(
     paath,
